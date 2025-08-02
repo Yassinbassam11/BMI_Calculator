@@ -3,6 +3,8 @@ import 'package:bmi_starter/screens/result_screen.dart';
 import 'package:bmi_starter/widgets/reusable_card.dart';
 import 'package:flutter/material.dart';
 
+enum Gender { male, female }
+
 class InputScreen extends StatefulWidget {
   const InputScreen({super.key});
 
@@ -11,7 +13,7 @@ class InputScreen extends StatefulWidget {
 }
 
 class _InputScreenState extends State<InputScreen> {
-  String gender = 'male';
+  Gender gender = Gender.male;
   double height = 180;
   int weight = 70;
   int age = 25;
@@ -31,13 +33,13 @@ class _InputScreenState extends State<InputScreen> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    color: gender == 'male'
+                    color: gender == Gender.male
                         ? kFloatingActionButtonColor
                         : kCardColor,
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          gender = 'male';
+                          gender = Gender.male;
                         });
                       },
                       child: Column(
@@ -54,13 +56,13 @@ class _InputScreenState extends State<InputScreen> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: gender == 'female'
+                    color: gender == Gender.female
                         ? kFloatingActionButtonColor
                         : kCardColor,
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          gender = 'female';
+                          gender = Gender.female;
                         });
                       },
                       child: Column(
