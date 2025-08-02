@@ -18,6 +18,7 @@ class ReusableCard extends StatelessWidget {
         boxShadow: List.filled(
           1,
           BoxShadow(
+            // ignore: deprecated_member_use
             color: Colors.white.withOpacity(0.2),
             blurRadius: 10,
             offset: Offset(0, 5),
